@@ -26,7 +26,7 @@ u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
 fontem TrueType.
 
 %prep
-%setup -q -n Font-TTF-%{version}
+%setup -q -n Font-TTF-0.2
 %patch -p1
 
 %build
