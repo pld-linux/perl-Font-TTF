@@ -9,8 +9,10 @@ Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Font/Font-TTF-%{version}.tar.gz
+Patch0:		%{name}-AAT.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
+BuildRequires:	perl-XML-Parser
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,6 +26,7 @@ fontem TrueType.
 
 %prep
 %setup -q -n Font-TTF-%{version}
+%patch0 -p1
 
 %build
 perl Makefile.PL
@@ -44,5 +47,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz lib/Font/TTF/*.gz
 %attr(755,root,root) %{_bindir}/*.plx
 %dir %{perl_sitelib}/Font/TTF
+%dir %{perl_sitelib}/Font/TTF/Kern
+%dir %{perl_sitelib}/Font/TTF/Mort
 %{perl_sitelib}/Font/TTF/*.pm
+%{perl_sitelib}/Font/TTF/Kern/*.pm
+%{perl_sitelib}/Font/TTF/Mort/*.pm
 %{_mandir}/man3/*
