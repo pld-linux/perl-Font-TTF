@@ -23,12 +23,11 @@ Summary(sv):	Font::TTF Perlmodul
 Summary(uk):	Модуль для Perl Font::TTF
 Summary(zh_CN):	Font::TTF Perl дё©И
 Name:		perl-Font-TTF
-Version:	0.31
+Version:	0.32
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-Patch0:		%{name}-AATutils.patch
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-XML-Parser
 BuildRequires:	rpm-perlprov >= 3.0.3-16
@@ -46,7 +45,6 @@ fontem TrueType.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
 
 %build
 perl Makefile.PL
