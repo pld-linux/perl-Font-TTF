@@ -1,0 +1,3 @@
+- remove outdated man patch,
+- rename in %%prep lib/font/ttf to lib/Font/TTF,
+- updated %%files (removed %%{perl_sitelib}/Ttfmod.pl).
