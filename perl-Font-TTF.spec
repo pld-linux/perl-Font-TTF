@@ -1,0 +1,58 @@
+%define		perl_sitelib	%(eval "`perl -V:installsitelib`"; echo $installsitelib)
+Summary:	Font-TTF perl module
+Summary(pl):	Modu³ perla Font-TTF
+Name:		perl-Font-TTF
+Version:	0.14
+Release:	3
+Copyright:	GPL
+Group:		Development/Languages/Perl
+Group(pl):	Programowanie/Jêzyki/Perl
+Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Font/Font-TTF-%{version}.tar.gz
+BuildRequires:	perl >= 5.005_03-10
+%requires_eq	perl
+Requires:	%{perl_sitearch}
+BuildRoot:	/tmp/%{name}-%{version}-root
+
+%description
+Font-TTF - Perl module for TrueType font hacking. In short, you can do almost 
+anything with a standard TrueType font with this module. 
+
+%description -l pl
+Font-TTF - modu³ perla do operacji na fontach TrueType. W skrócie, u¿ywaj±c
+tego modu³u mo¿esz robiæ niemal wszystko ze standardowym fontem TrueType.
+
+%prep
+%setup -q -n Font-TTF-%{version}
+
+%build
+perl Makefile.PL
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+
+(
+  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/Font/TTF
+  sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
+  mv .packlist.new .packlist
+)
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
+       README.TXT lib/Font/TTF/Changes
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc {README.TXT,lib/Font/TTF/Changes}.gz
+%attr(755,root,root) %{_bindir}/*.plx
+
+%{perl_sitelib}/Ttfmod.pl
+%dir %{perl_sitelib}/Font/TTF
+%{perl_sitelib}/Font/TTF/*.pm
+
+%{perl_sitearch}/auto/Font/TTF
+
+%{_mandir}/man3/*
