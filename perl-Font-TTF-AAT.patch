@@ -1,0 +1,33 @@
+diff -ur Font-TTF-0.22.orig/lib/Font/TTF/AATutils.pm Font-TTF-0.22/lib/Font/TTF/AATutils.pm
+--- Font-TTF-0.22.orig/lib/Font/TTF/AATutils.pm	Mon Apr  9 08:52:26 2001
++++ Font-TTF-0.22/lib/Font/TTF/AATutils.pm	Wed Apr 18 01:22:43 2001
+@@ -1,4 +1,4 @@
+-package Font::TTF::AAT::AATutils;
++package Font::TTF::AATutils;
+ 
+ use strict;
+ use vars qw(@ISA @EXPORT);
+diff -ur Font-TTF-0.22.orig/lib/Font/TTF/Mort/Insertion.pm Font-TTF-0.22/lib/Font/TTF/Mort/Insertion.pm
+--- Font-TTF-0.22.orig/lib/Font/TTF/Mort/Insertion.pm	Mon Apr  9 08:52:26 2001
++++ Font-TTF-0.22/lib/Font/TTF/Mort/Insertion.pm	Wed Apr 18 01:22:10 2001
+@@ -11,7 +11,7 @@
+ use strict;
+ use vars qw(@ISA);
+ use Font::TTF::Utils;
+-use Font::TTF::AAT::AATutils;
++use Font::TTF::AATutils;
+ 
+ @ISA = qw(Font::TTF::Mort::Subtable);
+ 
+diff -ur Font-TTF-0.22.orig/lib/Font/TTF/Mort/Subtable.pm Font-TTF-0.22/lib/Font/TTF/Mort/Subtable.pm
+--- Font-TTF-0.22.orig/lib/Font/TTF/Mort/Subtable.pm	Mon Apr  9 08:52:26 2001
++++ Font-TTF-0.22/lib/Font/TTF/Mort/Subtable.pm	Wed Apr 18 01:22:04 2001
+@@ -10,7 +10,7 @@
+ 
+ use strict;
+ use Font::TTF::Utils;
+-use Font::TTF::AAT::AATutils;
++use Font::TTF::AATutils;
+ 
+ require Font::TTF::Mort::Rearrangement;
+ require Font::TTF::Mort::Contextual;
