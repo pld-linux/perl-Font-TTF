@@ -14,7 +14,7 @@ Summary(fr):	Module Perl Font::TTF
 Summary(it):	Modulo di Perl Font::TTF
 Summary(ja):	Font::TTF Perl ¥â¥¸¥å¡¼¥ë
 Summary(ko):	Font::TTF ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Font::TTF
+Summary(nb):	Perlmodul Font::TTF
 Summary(pl):	Modu³ Perla Font::TTF
 Summary(pt):	Módulo de Perl Font::TTF
 Summary(pt_BR):	Módulo Perl Font::TTF
