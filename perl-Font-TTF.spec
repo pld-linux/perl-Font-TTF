@@ -3,7 +3,7 @@ Summary:	Font-TTF perl module
 Summary(pl):	Modu³ perla Font-TTF
 Name:		perl-Font-TTF
 Version:	0.22
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
