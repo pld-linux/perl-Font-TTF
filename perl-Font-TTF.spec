@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	Font
 %define	pnam	TTF
-%include	/usr/lib/rpm/macros.perl
 Summary:	Font-TTF perl module
 Summary(pl):	Modu³ perla Font-TTF
 Name:		perl-Font-TTF
 Version:	0.26
-Release:	2
-
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -27,7 +26,7 @@ u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
 fontem TrueType.
 
 %prep
-%setup -q -n Font-TTF-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
 
 %build
