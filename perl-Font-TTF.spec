@@ -1,11 +1,30 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Font
 %define	pnam	TTF
-Summary:	Font::TTF perl module
-Summary(pl):	Modu³ perla Font::TTF
+Summary:	Font::TTF Perl module
+Summary(cs):	Modul Font::TTF pro Perl
+Summary(da):	Perlmodul Font::TTF
+Summary(de):	Font::TTF Perl Modul
+Summary(es):	Módulo de Perl Font::TTF
+Summary(fr):	Module Perl Font::TTF
+Summary(it):	Modulo di Perl Font::TTF
+Summary(ja):	Font::TTF Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	Font::TTF ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul Font::TTF
+Summary(pl):	Modu³ Perla Font::TTF
+Summary(pt):	Módulo de Perl Font::TTF
+Summary(pt_BR):	Módulo Perl Font::TTF
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Font::TTF
+Summary(sv):	Font::TTF Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Font::TTF
+Summary(zh_CN):	Font::TTF Perl Ä£¿é
 Name:		perl-Font-TTF
-Version:	0.30
-Release:	2
+Version:	0.31
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -26,12 +45,13 @@ u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
 fontem TrueType.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-0.3
+%setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
 
 %build
 perl Makefile.PL
 %{__make}
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
