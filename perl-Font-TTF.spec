@@ -24,13 +24,13 @@ Summary(uk):	Модуль для Perl Font::TTF
 Summary(zh_CN):	Font::TTF Perl дё©И
 Name:		perl-Font-TTF
 Version:	0.32
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-XML-Parser
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +47,8 @@ fontem TrueType.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 %{!?_without_tests:%{__make} test}
 
@@ -63,12 +64,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.TXT lib/Font/TTF/Changes
 %attr(755,root,root) %{_bindir}/*.plx
-%dir %{perl_sitelib}/Font/TTF
-%dir %{perl_sitelib}/Font/TTF/Kern
-%dir %{perl_sitelib}/Font/TTF/Mort
-%{perl_sitelib}/Font/TTF/Manual.pod
-%{perl_sitelib}/Font/TTF/*.pm
-%{perl_sitelib}/ttfmod.pl
-%{perl_sitelib}/Font/TTF/Kern/*.pm
-%{perl_sitelib}/Font/TTF/Mort/*.pm
+%dir %{perl_vendorlib}/Font/TTF
+%dir %{perl_vendorlib}/Font/TTF/Kern
+%dir %{perl_vendorlib}/Font/TTF/Mort
+%{perl_vendorlib}/Font/TTF/Manual.pod
+%{perl_vendorlib}/Font/TTF/*.pm
+%{perl_vendorlib}/ttfmod.pl
+%{perl_vendorlib}/Font/TTF/Kern/*.pm
+%{perl_vendorlib}/Font/TTF/Mort/*.pm
 %{_mandir}/man[13]/*
