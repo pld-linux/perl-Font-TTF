@@ -5,27 +5,12 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Font
 %define	pnam	TTF
-Summary:	Font::TTF Perl module
-Summary(cs):	Modul Font::TTF pro Perl
-Summary(da):	Perlmodul Font::TTF
-Summary(de):	Font::TTF Perl Modul
-Summary(es):	Módulo de Perl Font::TTF
-Summary(fr):	Module Perl Font::TTF
-Summary(it):	Modulo di Perl Font::TTF
-Summary(ja):	Font::TTF Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	Font::TTF ÆÞ ¸ðÁÙ
-Summary(nb):	Perlmodul Font::TTF
-Summary(pl):	Modu³ Perla Font::TTF
-Summary(pt):	Módulo de Perl Font::TTF
-Summary(pt_BR):	Módulo Perl Font::TTF
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Font::TTF
-Summary(sv):	Font::TTF Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Font::TTF
-Summary(zh_CN):	Font::TTF Perl Ä£¿é
+Summary:	Font::TTF - Perl module for TrueType font hacking
+Summary(pl):	Font::TTF - modu³ Perla do operacji na fontach TrueType
 Name:		perl-Font-TTF
 Version:	0.34
 Release:	1
-License:	GPL
+License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3b0354a25650899cbec767f4b147f526
@@ -36,12 +21,12 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Font::TTF - Perl module for TrueType font hacking. In short, you can do
-almost anything with a standard TrueType font with this module.
+Font::TTF is a Perl module for TrueType font hacking. In short, you
+can do almost anything with a standard TrueType font with this module.
 
 %description -l pl
-Font::TTF - modu³ perla do operacji na fontach TrueType. W skrócie,
-u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
+Font::TTF - modu³ Perla do operacji na fontach TrueType. W skrócie,
+u¿ywaj±c tego modu³u mo¿na zrobiæ niemal wszystko ze standardowym
 fontem TrueType.
 
 %prep
