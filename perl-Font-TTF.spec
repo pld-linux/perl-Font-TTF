@@ -4,12 +4,11 @@
 Summary:	Font::TTF perl module
 Summary(pl):	Modu³ perla Font::TTF
 Name:		perl-Font-TTF
-Version:	0.26
-Release:	3
+Version:	0.30
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-Patch0:		%{name}-AAT.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-XML-Parser
@@ -26,8 +25,7 @@ u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
 fontem TrueType.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
+%setup -q -n %{pdir}-%{pnam}-0.3
 
 %build
 perl Makefile.PL
@@ -50,7 +48,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitelib}/Font/TTF
 %dir %{perl_sitelib}/Font/TTF/Kern
 %dir %{perl_sitelib}/Font/TTF/Mort
+%{perl_sitelib}/Font/TTF/Manual.pod
 %{perl_sitelib}/Font/TTF/*.pm
+%{perl_sitelib}/ttfmod.pl
 %{perl_sitelib}/Font/TTF/Kern/*.pm
 %{perl_sitelib}/Font/TTF/Mort/*.pm
-%{_mandir}/man3/*
+%{_mandir}/man[13]/*
