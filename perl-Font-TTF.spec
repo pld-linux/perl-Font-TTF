@@ -2,60 +2,51 @@
 Summary:	Font-TTF perl module
 Summary(pl):	Modu³ perla Font-TTF
 Name:		perl-Font-TTF
-Version:	0.14
-Release:	3
-Copyright:	GPL
+Version:	0.20
+Release:	1
+License:	GPL
 Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Font/Font-TTF-%{version}.tar.gz
-Patch:		perl-Font-TTF-man.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Font/Font-TTF-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl >= 5.6
 %requires_eq	perl
 Requires:	%{perl_sitearch}
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Font-TTF - Perl module for TrueType font hacking. In short, you can do almost 
-anything with a standard TrueType font with this module. 
+Font-TTF - Perl module for TrueType font hacking. In short, you can do
+almost anything with a standard TrueType font with this module.
 
 %description -l pl
-Font-TTF - modu³ perla do operacji na fontach TrueType. W skrócie, u¿ywaj±c
-tego modu³u mo¿esz robiæ niemal wszystko ze standardowym fontem TrueType.
+Font-TTF - modu³ perla do operacji na fontach TrueType. W skrócie,
+u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
+fontem TrueType.
 
 %prep
-%setup -q -n Font-TTF-%{version}
-%patch -p1
+%setup -q -n Font-TTF-0.2
+mv lib/font lib/Font
+mv lib/Font/ttf lib/Font/TTF
 
 %build
 perl Makefile.PL
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
 
-(
-  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/Font/TTF
-  sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv .packlist.new .packlist
-)
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
-       README.TXT lib/Font/TTF/Changes
+gzip -9nf README.TXT lib/Font/TTF/Changes
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README.TXT,lib/Font/TTF/Changes}.gz
+%doc *.gz lib/Font/TTF/*.gz
 %attr(755,root,root) %{_bindir}/*.plx
-
-%{perl_sitelib}/Ttfmod.pl
 %dir %{perl_sitelib}/Font/TTF
 %{perl_sitelib}/Font/TTF/*.pm
-
-%{perl_sitearch}/auto/Font/TTF
-
 %{_mandir}/man3/*
