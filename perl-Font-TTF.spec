@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Font
 %define	pnam	TTF
-Summary:	Font-TTF perl module
-Summary(pl):	Modu³ perla Font-TTF
+Summary:	Font::TTF perl module
+Summary(pl):	Modu³ perla Font::TTF
 Name:		perl-Font-TTF
 Version:	0.26
 Release:	3
@@ -17,11 +17,11 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Font-TTF - Perl module for TrueType font hacking. In short, you can do
+Font::TTF - Perl module for TrueType font hacking. In short, you can do
 almost anything with a standard TrueType font with this module.
 
 %description -l pl
-Font-TTF - modu³ perla do operacji na fontach TrueType. W skrócie,
+Font::TTF - modu³ perla do operacji na fontach TrueType. W skrócie,
 u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
 fontem TrueType.
 
