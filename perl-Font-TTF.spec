@@ -4,11 +4,11 @@ Summary(pl):	Modu³ perla Font-TTF
 Name:		perl-Font-TTF
 Version:	0.14
 Release:	3
-Copyright:	GPL
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Font/Font-TTF-%{version}.tar.gz
-Patch:		perl-Font-TTF-man.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Font/Font-TTF-%{version}.tar.gz
+Patch0:		perl-Font-TTF-man.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
@@ -16,12 +16,13 @@ Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Font-TTF - Perl module for TrueType font hacking. In short, you can do almost 
-anything with a standard TrueType font with this module. 
+Font-TTF - Perl module for TrueType font hacking. In short, you can do
+almost anything with a standard TrueType font with this module.
 
 %description -l pl
-Font-TTF - modu³ perla do operacji na fontach TrueType. W skrócie, u¿ywaj±c
-tego modu³u mo¿esz robiæ niemal wszystko ze standardowym fontem TrueType.
+Font-TTF - modu³ perla do operacji na fontach TrueType. W skrócie,
+u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
+fontem TrueType.
 
 %prep
 %setup -q -n Font-TTF-%{version}
