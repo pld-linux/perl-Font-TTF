@@ -2,7 +2,7 @@
 Summary:	Font-TTF perl module
 Summary(pl):	Modu³ perla Font-TTF
 Name:		perl-Font-TTF
-Version:	0.20
+Version:	0.21
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -25,9 +25,7 @@ u¿ywaj±c tego modu³u mo¿esz robiæ niemal wszystko ze standardowym
 fontem TrueType.
 
 %prep
-%setup -q -n Font-TTF-0.2
-mv lib/font lib/Font
-mv lib/Font/ttf lib/Font/TTF
+%setup -q -n Font-TTF-%{version}
 
 %build
 perl Makefile.PL
