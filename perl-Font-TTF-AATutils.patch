@@ -1,0 +1,8 @@
+--- Font-TTF-0.3/lib/Font/TTF/AATutils.pm.orig	Fri Jul 12 22:12:40 2002
++++ Font-TTF-0.3/lib/Font/TTF/AATutils.pm	Fri Jul 12 22:12:53 2002
+@@ -1,4 +1,4 @@
+-package Font::TTF::AAT::AATutils;
++package Font::TTF::AATutils;
+ 
+ use strict;
+ use vars qw(@ISA @EXPORT);
