@@ -6,7 +6,7 @@
 %define		pdir	Font
 %define		pnam	TTF
 Summary:	Font::TTF - Perl module for TrueType font hacking
-Summary(pl.UTF-8):   Font::TTF - moduł Perla do operacji na fontach TrueType
+Summary(pl.UTF-8):	Font::TTF - moduł Perla do operacji na fontach TrueType
 Name:		perl-Font-TTF
 Version:	0.35
 Release:	1
