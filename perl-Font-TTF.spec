@@ -8,12 +8,12 @@
 Summary:	Font::TTF - Perl module for TrueType font hacking
 Summary(pl.UTF-8):	Font::TTF - moduł Perla do operacji na fontach TrueType
 Name:		perl-Font-TTF
-Version:	1.05
+Version:	1.06
 Release:	1
 License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Font/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a9d0acf4cb9ebaee875d71732b83dfe5
+# Source0-md5:	241b59310ad4450e6e050d5e790f1b21
 URL:		http://search.cpan.org/dist/Font-TTF/
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-devel >= 1:5.8.0
