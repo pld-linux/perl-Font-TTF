@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Font
 %define		pnam	TTF
 Summary:	Font::TTF - Perl module for TrueType font hacking
